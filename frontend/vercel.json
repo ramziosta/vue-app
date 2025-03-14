@@ -1,14 +1,11 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "builds": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "engines": {
-          "node": "20.x"
-        }
-      }
+      "src": "frontend/dist/**/*",
+      "use": "@vercel/static"
     }
   ],
   "outputDirectory": "frontend/dist"
