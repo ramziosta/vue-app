@@ -1,3 +1,17 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/node",
+      "config": {
+        "engines": {
+          "node": "20.x"
+        }
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "/index.html" }
+  ]
 }
