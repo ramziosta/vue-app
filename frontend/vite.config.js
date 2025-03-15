@@ -18,13 +18,13 @@ export default defineConfig({
     ],
     server: {
         port: 3000,
-        proxy: {
+        proxy: process.env.NODE_ENV === 'development' ? {
             '/api': {
                 target: 'https://vue-app-backend.vercel.app/',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''), // This removes /api prefix
+                rewrite: (path) => path.replace(/^\/api/, ''),
             },
-        },
+        } : undefined,
     },
     resolve: {
         alias: {
