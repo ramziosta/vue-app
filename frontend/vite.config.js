@@ -20,7 +20,7 @@ export default defineConfig({
         port: 3000,
         proxy: {
             '/api': {
-                target: 'http://localhost:8000',
+                target: 'https://vue-app-backend.vercel.app/',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ''), // This removes /api prefix
             },
