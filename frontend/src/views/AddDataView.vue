@@ -44,7 +44,7 @@ const submitForm = async () => {
     });
 
     if (response.data?.id) {
-      await router.push(`/data/${response.data.id}`);
+      await router.push(`/data`);
       console.log("Navigation successful:", response.data.id);
     }
 
