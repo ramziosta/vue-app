@@ -18,17 +18,20 @@ export default defineConfig({
     ],
     server: {
         port: 3000,
-        proxy: process.env.NODE_ENV === 'development' ? {
+        proxy: {
             '/api': {
-                target: 'https://vue-app-backend.vercel.app/',
+                target: process.env.VITE_BACKEND_URL || 'https://vue-app-backend.vercel.app',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ''),
             },
-        } : undefined,
+        },
     },
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
         },
+    },
+    define: {
+        __VUE_APP_BACKEND_URL__: JSON.stringify(process.env.VITE_BACKEND_URL || 'https://vue-app-backend.vercel.app'),
     },
 });
