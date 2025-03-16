@@ -71,12 +71,9 @@ const submitForm = async() => {
 
     toast.success("Data updated successfully!", {
       timeout: 3000, // 3 seconds
+      onClose: () => router.push(`/data`)
     });
 
-    if (response.data?.id) {
-      await router.push(`/data`);
-      console.log("Navigation successful:", response.data.id);
-    }
 
     console.log("Response:", response);
   } catch (error) {
