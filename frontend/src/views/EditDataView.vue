@@ -73,10 +73,10 @@ const submitForm = async() => {
       timeout: 3000, // 3 seconds
     });
 
-    // if (response.data?.id) {
-    //   await router.push(`/data/${response.data.id}`);
-    //   console.log("Navigation successful:", response.data.id);
-    // }
+    if (response.data?.id) {
+      await router.push(`/data/${response.data.id}`);
+      console.log("Navigation successful:", response.data.id);
+    }
 
     console.log("Response:", response);
   } catch (error) {
