@@ -37,7 +37,7 @@ const submitForm = async () => {
     },
   };
   try {
-    const response = await axios.post("http://localhost:8000/traders", newData);
+    const response = await axios.post("https://vue-app-backend.vercel.app/traders", newData);
 
     toast.success("Data added successfully!", {
       timeout: 3000, // 3 seconds

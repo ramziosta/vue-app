@@ -31,7 +31,7 @@ const state = reactive({
 const toast = useToast();
 onMounted(async () => {
   try {
-    const response = await axios.get(`/api/data/${traderId}`);
+    const response = await axios.get(`https://vue-app-backend.vercel.app/data/${traderId}`);
     state.data = response.data;
     form.type = state.data.type;
     form.name = state.data.name;
