@@ -51,36 +51,12 @@ onMounted(async () => {
   }
 });
 
-const submitForm = async() => {
-  console.log(form);
-  const updatedData = {
-    type: form.type,
-    name: form.name,
-    description: form.description,
-    salary: form.salary,
-    location: form.location,
-    company: {
-      name: form.company.name,
-      description: form.company.description,
-      contactEmail: form.company.contactEmail,
-      contactPhone: form.company.contactPhone,
-    },
-  };
-  try {
-    const response = await axios.put(`https://vue-app-backend.vercel.app/traders/${traderId}`, updatedData);
-
-    toast.success("Data updated successfully!", {
-      timeout: 3000, // 3 seconds
-      onClose: () => router.push(`/data`)
-    });
+toast.success("Data updated successfully!", {
+  timeout: 3000, // 3 seconds
+  onClose: () => router.push(`/data`)
+});
 
 
-    console.log("Response:", response);
-  } catch (error) {
-    console.error("Error updating form:", error);
-    toast.error("Error updating data! Please try again.");
-  }
-};
 
 </script>
 
