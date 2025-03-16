@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import router  from './routes/router.js';
 import cors from 'cors';
 const corsOptions = {
-    origin: 'https://vue-app-frontend.vercel.app',
+    origin: 'https://vue-app-frontend.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
