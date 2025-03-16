@@ -25,7 +25,7 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/traders');
+    const response = await axios.get('https://vue-app-backend.vercel.app/traders');
     state.receivedData = response.data;
     console.log('Data received:', response.data);
   } catch (error) {
