@@ -67,7 +67,7 @@ const submitForm = async() => {
     },
   };
   try {
-    const response = await axios.put(`/api/traders/${traderId}`, updatedData);
+    const response = await axios.put(`https://vue-app-backend.vercel.app/traders/${traderId}`, updatedData);
 
     toast.success("Data updated successfully!", {
       timeout: 3000, // 3 seconds

@@ -12,9 +12,12 @@ export const getAllTraders = async (req, res) => {
 
 // Get a single trader by ID
 export const getOneTrader = async (req, res) => {
-    const { id } = req.params;
+    // Change this line to match how Express provides route parameters
+    const id = req.params.id;
+
     try {
         const trader = await Trader.findOne({ id });
+
         if (!trader) {
             return res.status(404).json({ message: 'Trader not found' });
         }
