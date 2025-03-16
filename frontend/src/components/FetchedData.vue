@@ -33,6 +33,7 @@ onMounted(async () => {
     state.error = "Failed to load data from server";
   } finally {
     state.isLoading = false;
+    console.log('Data loading complete')
   }
 })
 </script>

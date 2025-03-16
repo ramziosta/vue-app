@@ -32,6 +32,6 @@ export default defineConfig({
         },
     },
     define: {
-        __VUE_APP_BACKEND_URL__: JSON.stringify(process.env.VITE_BACKEND_URL || 'https://vue-app-backend.vercel.app'),
+        __VUE_APP_BACKEND_URL__: JSON.stringify(process.env.VITE_BACKEND_URL || 'https://vue-app-backend.vercel.app/'),
     },
 });
