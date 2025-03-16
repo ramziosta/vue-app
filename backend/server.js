@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import router  from './routes/router.js';
 import cors from 'cors';
 const corsOptions = {
-    origin: 'https://vue-app-frontend.vercel.app/',
+    origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
@@ -16,6 +16,7 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/traders', router);
+app.use('/', router);
 
 
 const DB_URI = process.env.MONGODB_URI;
